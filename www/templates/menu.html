@@ -1,0 +1,50 @@
+<ion-side-menus enable-menu-with-back-views="false">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="menuContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left">
+    <ion-header-bar class="bar-stable">
+      <h1 class="title">Menu</h1>
+    </ion-header-bar>
+    <ion-content>
+      <ion-list>
+        <ion-item>
+          <div class="bar bar-header bar-calm">
+            <h1 class="title">Category</h1>
+          </div>
+        </ion-item>
+        <ion-item >
+          <div class="list">
+
+            <div class="item item-divider" ng-repeat="(key, value) in menu.products | groupBy: 'category'" style="cursor:pointer" ng-click="val.show=!val.show">
+              {{key}}
+              <ul ng-show="val.show" ng-init="val.show=false">
+               <li ng-repeat="val in value" ng-click="menu.getEachCateogry($index)"  menu-close>{{val.name}}</li>
+              </ul>
+            </div>
+
+          </div>
+       <!--    <li ng-repeat="item in value">
+            {{ player.name }} 
+          </li> -->
+        </ion-item>
+<!--         <ion-item menu-close href="#/app/browse">
+          Browse
+        </ion-item>
+        <ion-item menu-close href="#/app/playlists">
+          Playlists
+        </ion-item> -->
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

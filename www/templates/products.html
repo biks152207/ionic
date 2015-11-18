@@ -1,0 +1,32 @@
+<ion-view view-title="Products">
+  <ion-content>
+  	<div class="row" ng-repeat="prod in product.lists">
+  		<div class="col" >
+	  		<div class="list card">
+	  		  <div class="item item-avatar">
+	  		    <img src="http://evermadetraders.com/images/home/logo.png">
+	  		    <h2>{{prod.name}}</h2>
+	  		    <p>{{prod.description}}</p>
+	  		  </div>
+
+	  		  <div class="item item-image">
+	  		    <img src="{{prod.image}}">
+	  		  </div>
+
+	  		  <a class="item item-icon-left assertive" href="#">
+	  		    <i class="ion-social-usd-outline"></i>
+	  		    {{prod.price}}
+	  		  </a>
+
+	  			</div>
+  			</div>
+  		</div>
+
+
+    <!-- <ion-list>
+      <ion-item ng-repeat="product in product.lists" href="#/app/product/{{product.id}}">
+        {{product.title}}
+      </ion-item>
+    </ion-list> -->
+  </ion-content>
+</ion-view>
